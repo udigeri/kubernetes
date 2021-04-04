@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: kube-rs
+  labels:
+    app: kube-rs
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: kube-rs
+  template:
+    metadata:
+      labels:
+        app: kube-rs
+        svc: kube-svc
+    spec:
+      containers:
+        - name: kube
+          image: docker.io/udigeri/kube:v1.0.0
+          ports:
+            - containerPort: 80
+          resources:
+            requests:
+              cpu: 10m
+              memory: 10Mi
