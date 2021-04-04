@@ -4,7 +4,6 @@ metadata:
   name: kube
   labels:
     app: kube
-    svc: kube-svc
 spec:
   containers:
     - image: docker.io/udigeri/kube:v1.0.0

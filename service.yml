@@ -3,9 +3,9 @@ kind: Service
 metadata:
   name: kube-svc
 spec:
+  selector:
+    svc: kube
   ports:
     - port: 80
       protocol: TCP
       targetPort: 80
-  selector:
-    svc: kube-svc
